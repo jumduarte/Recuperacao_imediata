@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores</title>
+</head>
+<body>
+    <h2>Adicionar Cores</h2>
+    <input type="text" id="corInput" placeholder="Digite o nome da cor">
+    <button onclick="adicionarCor()">Adicionar</button>
+   
+    <h3>Lista de Cores</h3>
+    <ol id="listaCores"></ol>
+
+    <script>
+        function adicionarCor() {
+
+            var cor = document.getElementById("corInput").value;
+
+            if (cor == "") {
+                alert("Por favor, digite o nome da cor.");
+                return;
+            }
+
+            var novaCor = document.createElement("li");
+            novaCor.textContent = cor;
+
+            var listaCores = document.getElementById("listaCores");
+            listaCores.appendChild(novaCor);
+
+            document.getElementById("corInput").value = "";
+        }
+    </script>
+</body>
+</html>

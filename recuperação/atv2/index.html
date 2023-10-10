@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Calculadora</title>
+</head>
+<body>
+    <section class="container d-flex justify-content-center mt-5">
+        <form class="card p-3 col-3" id="calculadoraForm">
+            <h4 class="d-flex justify-content-center mb-4 mt-2">CALCULADORA</h4>
+            
+            <div class="mb-3">
+                <label class="form-label">Digite o Primeiro Valor</label>
+                <input type="text" class="form-control" id="primeiroValor">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Digite o Segundo Valor</label>
+                <input type="text" class="form-control" id="segundoValor">
+            </div>
+
+            <button class="btn btn-dark" type="submit">Calcular</button>
+        </form>
+   </section>
+
+   <script>
+        
+        document.getElementById("calculadoraForm").addEventListener("submit", function (event) {
+            event.preventDefault(); 
+
+          
+            var primeiroValor = parseFloat(document.getElementById("primeiroValor").value);
+            var segundoValor = parseFloat(document.getElementById("segundoValor").value);
+
+            var soma = primeiroValor + segundoValor;
+            var subtracao = primeiroValor - segundoValor;
+            var multiplicacao = primeiroValor * segundoValor;
+            var divisao = primeiroValor / segundoValor;
+
+            alert("Resultado da Adição: " + soma + "\n")
+            alert("Resultado da Subtração: " + subtracao + "\n")
+            alert("Resultado da Multiplicação: " + multiplicacao + "\n")
+            alert("Resultado da Divisão: " + divisao);
+        });
+    </script>
+</body>
